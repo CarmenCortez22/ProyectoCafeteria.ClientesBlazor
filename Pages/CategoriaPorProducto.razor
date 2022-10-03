@@ -25,7 +25,7 @@ else
                         <MudText Typo="Typo.body2">@item.Precio</MudText>
                     </MudCardContent>
                     <MudCardActions>
-                        <MudButton Link="@($"/detalles/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
+                        <MudButton Link="@($"/precio/{item.Id}")" Variant="Variant.Outlined" Color="Color.Success">Detalles</MudButton>
                     </MudCardActions>
                 </MudCard>
             </MudItem>
@@ -42,6 +42,6 @@ else
     protected override async Task OnInitializedAsync()
     {
         if (id > 0)
-            productos = await ProductosService.GetByProducto(id);
+            productos = await ProductosService.GetByCategoria(id);
     }
 }

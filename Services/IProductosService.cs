@@ -7,7 +7,7 @@ namespace Proyecti_Cafeteria.ClientesBlazor.Services
     public interface IProductosService
     {
         Task<IEnumerable<Producto>> GetAll();
-        Task<IEnumerable<Producto>> GetByProducto(int idMenu);
+        Task<IEnumerable<Producto>> GetByCategoria(int idMenu);
         Task<Producto> GetById(int id);
     }
 }

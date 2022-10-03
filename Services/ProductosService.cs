@@ -26,7 +26,7 @@ namespace Proyecti_Cafeteria.ClientesBlazor.Services
             return JsonSerializer.Deserialize<IEnumerable<Producto>>(resp, options);
         }
 
-        public async Task<IEnumerable<Producto>> GetByDepartamento(int idMenu)
+        public async Task<IEnumerable<Producto>> GetByCategoria(int idMenu)
         {
             var resp = await _httpClient.PostAsJsonAsync($"Producto/Buscar", new { idCategoria = idMenu });
             string respString = await resp.Content.ReadAsStringAsync();
@@ -39,10 +39,6 @@ namespace Proyecti_Cafeteria.ClientesBlazor.Services
             return JsonSerializer.Deserialize<Producto>(resp, options);
         }
 
-        public Task<IEnumerable<Producto>> GetByProducto(int idMenu)
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }
 
